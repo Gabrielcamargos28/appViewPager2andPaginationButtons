@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ViewPagerTeste</string>
+    <string name="prev_text">Anterior</string>
+    <string name="next_text">Proximo</string>
+</resources>
