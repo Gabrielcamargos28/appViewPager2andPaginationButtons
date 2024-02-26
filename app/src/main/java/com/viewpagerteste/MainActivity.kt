@@ -1,33 +1,43 @@
 package com.viewpagerteste
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var viewPager2: ViewPager2
+
+    private lateinit var welcomeAdapter: WelcomeAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        viewPager2 = findViewById(R.id.view_pager)
 
         val contents = listOf(
             Welcome(
                 "Seja bem vindo",
                 R.drawable.ic_launcher_background,
                 "Tutoria view"
-            ),Welcome(
+            ), Welcome(
                 "Pag2",
                 R.drawable.ic_launcher_foreground,
                 "ABC"
-            ),Welcome(
+            ), Welcome(
                 "Pag3",
                 R.drawable.ic_launcher_background,
                 "DEF"
             )
         )
 
+        welcomeAdapter = WelcomeAdapter(this, contents)
+        viewPager2.adapter = welcomeAdapter
+
 
         var contentIndex = 0
-
+        /*
         val nextBtn: Button = findViewById(R.id.btn_next)
         val prevBtn: Button = findViewById(R.id.btn_prev)
 
@@ -63,5 +73,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()
+    }*/
     }
 }
